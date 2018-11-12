@@ -23,6 +23,7 @@ export default class Dayz extends React.Component {
         onEventClick:      PropTypes.func,
         onEventResize:     PropTypes.func,
         timeFormat:        PropTypes.string,
+        dayFormat:         PropTypes.string,
     }
 
     static defaultProps = {
@@ -81,9 +82,10 @@ export default class Dayz extends React.Component {
 
     render() {
         const classes = ['dayz', this.props.display];
+        console.log("dayz-props:", this.props);
         return (
             <div className={classes.join(' ')}>
-                <XLabels date={this.props.date} display={this.props.display} />
+                <XLabels date={this.props.date} display={this.props.display} dayFormat={this.props.dayFormat} />
                 <div className="body">
                     <YLabels
                         layout={this.state.layout}
